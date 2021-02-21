@@ -25,4 +25,4 @@ thread2 = myThread(2, "Thread-2", 2)
 # Starting threads
 thread1.start()
 thread2.start()
-print("Main Thread")
+print("Main Thread") 
