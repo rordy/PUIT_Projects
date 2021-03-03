@@ -6,7 +6,7 @@ def move_a(event):
     canvas.coords(a, event.x-50, event.y-50, event.x+50, event.y+50)
 
 def move_b():
-    canvas.move(b, 1, 0)
+    canvas.move(b, 2, 150)
     # move again after 25ms (0.025s)
     root.after(25, move_b)
 

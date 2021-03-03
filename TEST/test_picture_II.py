@@ -22,7 +22,7 @@ c = tk.Canvas(width=width, height=height)
 c.pack()
 
 
-image = c.create_rectangle(50,0,100,50, fill ='red')
+image = c.create_rectangle(50,0,0,50, fill ='red')
 str1 = "sin(x)=blue"
 c.create_text(10, 20, anchor=tk.SW, text=str1)
 
@@ -38,22 +38,18 @@ for x in range(400):
 
 #image = c.create_image(0,0,anchor=tk.NW, image=img)
 
-DELAY = 10000
+DELAY = 100
 
-def mova(event):
-    if event.char =="a":
-        for x in range(0,400,2):
-            c.after(DELAY, c.move(image,xy1[x],xy1[x+1]))
-            print(xy1[x],xy1[x+1])
-    return
+#print("TEST",xy1[1])
 
 def move_b():
-    c.move(image, 1, 0)
+    for x in range(0, 200,2):
+        c.after(DELAY,c.move(image, xy1[x], xy1[x+1]))
     # move again after 25ms (0.025s)
-    root.after(25, move_b)
+    #root.after(25, move_b)
 
 
-root.bind("<Key>",mova)
+move_b()
 
 
 #sin_line = c.create_line(xy1, fill='blue')
